@@ -17,7 +17,17 @@ function App() {
   function handleSubmit(event: any) {
     event.preventDefault();
     if (!file) {
-      alert("You have Not Selected file.");
+      toast.error("You have Not Selected file.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+
       return;
     }
 
@@ -76,39 +86,37 @@ function App() {
         <div className="wrapper">
           <div className="child">
             <div className="box">
-              <div className="">
-                {!file ? (
-                  <p className="select-file-paragraph">
-                    Select A File to Parse Logs(*)
-                  </p>
-                ) : (
-                  <p className="select-file-paragraph">
-                    You have Selected {file?.name} 👍
-                  </p>
-                )}
-                <div className="outlined-box">
-                  <Form onSubmit={handleSubmit}>
-                    <Form.Field className="file-input">
-                      <Button as="label" htmlFor="file" type="button">
-                        <img
-                          src="/images/upload-icon.svg"
-                          height={40}
-                          width={30}
-                          alt={"Upload Image"}
-                        />
-                      </Button>
-                      <input
-                        type="file"
-                        id="file"
-                        hidden
-                        onChange={handleChange}
+              {!file ? (
+                <p className="select-file-paragraph">
+                  Select A File to Parse Logs(*)
+                </p>
+              ) : (
+                <p className="select-file-paragraph">
+                  You have Selected {file?.name} 👍
+                </p>
+              )}
+              <div className="outlined-box">
+                <Form onSubmit={handleSubmit}>
+                  <Form.Field className="file-input">
+                    <Button as="label" htmlFor="file" type="button">
+                      <img
+                        src="/images/upload-icon.svg"
+                        height={40}
+                        width={30}
+                        alt={"Upload Image"}
                       />
-                      <Button type="submit">
-                        {!isUploading ? "Upload" : "Uploading..."}
-                      </Button>
-                    </Form.Field>
-                  </Form>
-                </div>
+                    </Button>
+                    <input
+                      type="file"
+                      id="file"
+                      hidden
+                      onChange={handleChange}
+                    />
+                    <Button type="submit">
+                      {!isUploading ? "Upload" : "Uploading..."}
+                    </Button>
+                  </Form.Field>
+                </Form>
               </div>
             </div>
           </div>
