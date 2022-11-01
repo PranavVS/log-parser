@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "82ba7d9e-cf94-4add-947b-fc8b9864476f",
+		"name": "Interview Question",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:5000/logs/parse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/pranav/log-parser/example.log"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5000/logs/parse",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"logs",
+						"parse"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

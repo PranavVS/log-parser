@@ -1,0 +1,36 @@
+Parse the logs: Takes the file content as string.
+Seperate each log entry as an array:
+    For this simply seperate the each line.
+For each log:
+    Only allow the logs  with log level as errors and warn
+    if read log is empty simply skip it.
+    get the log level.
+    check if the log level is error or warn if not then skip the log entry.
+    Extract remaining required fields such as timestamp, transactionId,  error-message.
+return the extracted data.
+
+
+Algorithm for logStringToArray:
+    array=Split the string by line
+    return the array.
+
+Algorithm for get Date from log:
+    1. Write the regex to match the ISO date.
+    2. Match the date and extract it.
+    3. Construct the Date Object.
+    4. Return the unix timestamp.
+
+Algorithm for getting Log Level:
+    1. Figure out the pattern for the log level in the logs.
+    2. Match the  string pattern and then extract the log level.
+    3. Return the log level extracted.
+
+Algorithm for getTransactionId:
+    1. Figure out the pattern for the UUID in the logs.
+    2. Match the  string pattern and then extract the UUID.
+    3. Return the UUID extracted.
+
+Algorithm for getLogJson:
+    1. Figure out the pattern for the json info in the logs.
+    2. Match the  string pattern and then extract the json-info.
+    3. parse the json object and Return the json .

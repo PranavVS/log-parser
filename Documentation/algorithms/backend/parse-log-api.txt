@@ -1,0 +1,5 @@
+Read and upload the file to /tmp/some-file-name
+if File not uploaded then return error message saying Unable to upload file.
+Read the logs from the uploaded file.
+parse the logs.
+return the logs as api response.

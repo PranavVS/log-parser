@@ -1,0 +1,3 @@
+Initialize the file name in the constructor.
+read the file using filesystem functions
+return the read data buffer as string.
